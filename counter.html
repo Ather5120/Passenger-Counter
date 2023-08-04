@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="counter.css">
+    </head>
+    <body>
+        <h1>People entered:</h1>
+        <h2 id="count-el">0</h2>
+        <button id="increment-btn" onclick="increment()">INCREMENT</button>
+        <button id="save-btn" onclick="save()">SAVE</button>
+        <p id="save-el">Previous entries: </p>
+        <script>
+          let counter = document.getElementById("count-el")
+          let entries = document.getElementById("save-el")
+          let count = 0;
+
+          function increment(){
+            count+=1;
+            counter.innerText=count
+          }
+          function save(){
+            let countstr = count + "-";
+            entries.innerText += countstr
+            counter.innerText = 0
+            count = 0
+          }
+        </script>
+    </body>
+</html>
